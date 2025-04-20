@@ -12,6 +12,7 @@ services:
       - "5433:5432"  # Porta do PostgreSQL
     volumes:
       - postgres_data:/var/lib/postgresql/data
+      - ./core/db_scripts:/docker-entrypoint-initdb.d  # Monta o diretório local de scripts no container
 
   flask:
     build:
